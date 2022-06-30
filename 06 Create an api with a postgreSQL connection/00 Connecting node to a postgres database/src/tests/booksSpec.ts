@@ -12,20 +12,20 @@ describe("Book Model", () => {
     })
     it('create method should add a book', async () => {
         const result = await store.create({
-            id: 1,
-            title: 'Bridge to Terabithia',
+            id: 0,
+            title: "Clean Code",
             total_pages: 250,
-            author: 'Katherine Paterson',
-            type: 'Childrens',
-            summary: "lorem ipdasdsadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            author: "Martin",
+            type: "Software enginnering",
+            summary: "How to write clean code"
         });
         expect(result).toEqual({
-            id: 1,
-            title: 'Bridge to Terabithia',
+            id: result.id,
+            title: "Clean Code",
             total_pages: 250,
-            author: 'Katherine Paterson',
-            type: 'Childrens',
-            summary: "lorem ipdasdsadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            author: "Martin",
+            type: "Software enginnering",
+            summary: "How to write clean code"
 
         });
     });

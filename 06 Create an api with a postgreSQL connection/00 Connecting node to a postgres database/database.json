@@ -3,14 +3,14 @@
       "driver": "pg",
       "host": "127.0.0.1",
       "database": "test",
-      "user": "developer",
-      "password": "123"
+      "user": "postgres",
+      "password": "xMansour96"
     },
     "test": {
         "driver": "pg",
         "host": "127.0.0.1",
         "database": "test_testing",
-        "user": "developer",
-        "password": "123"
+        "user": "postgres",
+        "password": "xMansour96"
       }
   }
