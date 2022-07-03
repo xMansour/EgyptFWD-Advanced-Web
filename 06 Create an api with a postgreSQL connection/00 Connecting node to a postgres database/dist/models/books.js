@@ -58,7 +58,7 @@ class BookStore {
             }
         });
     }
-    read(id) {
+    show(id) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const conn = yield database_1.default.connect();

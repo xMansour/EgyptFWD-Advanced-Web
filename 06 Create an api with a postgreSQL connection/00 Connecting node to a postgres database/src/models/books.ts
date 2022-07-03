@@ -41,7 +41,7 @@ export class BookStore {
     async delete(id: string): Promise<Book> {
         try {
             const conn = await Client.connect();
-            const sql = 'DELETE * FROM books WHERE id = ($1)'
+            const sql = 'DELETE FROM books WHERE id =($1)'
             const result = await conn.query(sql, [id]);
             conn.release();
             return result.rows[0];
@@ -50,7 +50,7 @@ export class BookStore {
         }
     }
 
-    async read(id: string): Promise<Book> {
+    async show(id: string): Promise<Book> {
         try {
             const conn = await Client.connect();
             const sql = 'SELECT * FROM books WHERE id =($1)';
