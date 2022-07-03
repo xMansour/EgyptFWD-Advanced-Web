@@ -1,7 +1,6 @@
-import { Pool } from 'pg';
+import { Pool } from "pg";
 import dotenv from 'dotenv';
 
-//line initializes the environment variables. You can't access the env vars unless this line exists in your code, it typically goes as close to the beginning of the program as possible.
 dotenv.config();
 
 const {
@@ -12,11 +11,10 @@ const {
     POSTGRES_PASSWORD,
     NODE_ENV
 } = process.env;
-console.log("NODE_ENV: "+NODE_ENV);
+
 
 let client;
 if (NODE_ENV === "dev") {
-    //Pool is a connection to the database
     client = new Pool({
         host: POSTGRES_HOST,
         database: POSTGRES_DB,
@@ -26,7 +24,6 @@ if (NODE_ENV === "dev") {
 }
 
 if (NODE_ENV === "test") {
-    //Pool is a connection to the database
     client = new Pool({
         host: POSTGRES_HOST,
         database: POSTGRES_TEST_DB,
@@ -34,6 +31,5 @@ if (NODE_ENV === "test") {
         password: POSTGRES_PASSWORD
     })
 }
-console.log(NODE_ENV);
 
 export default client;
